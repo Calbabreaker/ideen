@@ -1,0 +1,8 @@
+[package]
+name = "ideen-cli"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+ideen-qr = { path = "../ideen-qr" }
+image = { version = "0.25", features = ["png"], default-features = false}

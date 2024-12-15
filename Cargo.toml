@@ -1,0 +1,4 @@
+[workspace]
+members = ["ideen-qr", "ideen-cli"]
+default-members = ["ideen-cli"]
+resolver = "2"
