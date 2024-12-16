@@ -1,5 +1,3 @@
-use std::num::NonZeroU8;
-
 pub enum ErrorLevel {
     L,
     M,
@@ -51,7 +49,6 @@ pub struct Format {
     pub encoding: Encoding,
     pub error_level: ErrorLevel,
     pub mask_pattern: u8,
-    pub module_size: u8,
     pub empty_gap: u8,
 }
 
@@ -62,7 +59,6 @@ impl Default for Format {
             encoding: Encoding::Binary,
             error_level: ErrorLevel::L,
             mask_pattern: 0,
-            module_size: 3,
             empty_gap: 4,
         }
     }
@@ -75,10 +71,5 @@ impl Format {
             encoding: Encoding::auto(data),
             ..Default::default()
         }
-    }
-
-    pub fn image_size(&self) -> u32 {
-        let total_size = self.version.dim_size() + (self.empty_gap as u32 * 2);
-        total_size * self.module_size as u32
     }
 }
