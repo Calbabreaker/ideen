@@ -55,7 +55,7 @@ pub struct Format {
 impl Default for Format {
     fn default() -> Self {
         Self {
-            version: Version(1),
+            version: Version(10),
             encoding: Encoding::Binary,
             error_level: ErrorLevel::L,
             mask_pattern: 0,
@@ -67,7 +67,6 @@ impl Default for Format {
 impl Format {
     pub fn auto(data: &str) -> Self {
         Self {
-            version: Version(1),
             encoding: Encoding::auto(data),
             ..Default::default()
         }
